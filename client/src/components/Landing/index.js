@@ -35,30 +35,39 @@ const getRandomWord = (wordBank) => {
 
 const Landing = () => {
   const [word, setWord] = useState("Favour");
+  const [offsetY, setOffsetY] = useState(0)
+  const handleScroll = () => setOffsetY(window.pageYOffset)
 
   useEffect(() => {
     const wordChangeId = setInterval(() => setWord(getRandomWord(wordBank)), 1000);
   
     return () => clearInterval(wordChangeId);
-  });
+  },[]);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  },[]);
+
   return (
     <LandingContainer>
       <HeroBanner>
-        <HeroContentContainer>
-          <HeroH1>Do Someone A <HeroSpan>{word}</HeroSpan> Today</HeroH1>
+        <HeroContentContainer style={{ transform: `translateY(${offsetY * 0.15}px)`}}>
+          <HeroH1 >Do Someone A <HeroSpan>{word}</HeroSpan> Today</HeroH1>
           <HeroBtn>Get Started</HeroBtn>
         </HeroContentContainer>
       </HeroBanner>
       <LandingSection>
         <LandingImg src={'img/landing1.svg'}/>
         <LandingText>
-          <LandingTextHeader>Catchy Header</LandingTextHeader>
+          <LandingTextHeader>Help Others</LandingTextHeader>
           <LandingTextP>{placeholder}</LandingTextP>
         </LandingText>
       </LandingSection>
       <LandingSection bgDark={true}>
         <LandingText textLight={true}>
-          <LandingTextHeader>Catchy Header</LandingTextHeader>
+          <LandingTextHeader>Build A Community</LandingTextHeader>
           <LandingTextP>{placeholder}</LandingTextP>
         </LandingText>
         <LandingImg src={'img/landing2.svg'}/>
@@ -66,7 +75,7 @@ const Landing = () => {
       <LandingSection>
         <LandingImg src={'img/landing3.svg'}/>
         <LandingText>
-          <LandingTextHeader>Catchy Header</LandingTextHeader>
+          <LandingTextHeader>Join The Favourhood</LandingTextHeader>
           <LandingTextP>{placeholder}</LandingTextP>
         </LandingText>
       </LandingSection>

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const LandingContainer = styled.div`
+  font-family: 'Poppins', sans-serif;
 `
 
 export const HeroBanner = styled.div`
@@ -14,6 +15,7 @@ export const HeroBanner = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Roboto', sans-serif;
 `
 
 export const HeroContentContainer = styled.div`
@@ -24,12 +26,13 @@ export const HeroContentContainer = styled.div`
 `
 
 export const HeroH1 = styled.h1`
-  font-size: 3rem;
+  font-size: 5rem;
 `
 
 export const HeroSpan = styled.span`
-  font-size: 4.1rem;
+  font-size: 6.1rem;
   color: #E78816;
+  transition: all 0.25s ease;
 `
 
 export const HeroBtn = styled.button`
@@ -53,11 +56,11 @@ export const HeroBtn = styled.button`
 export const LandingSection = styled.div`
   display: flex;
   padding: 2rem;
-  background-color: ${({bgDark}) => (bgDark ? "#010606" : "#f9f9f9")};
+  background-color: ${({bgDark}) => (bgDark ? "#000" : "#FFF")};
 `
 
 export const LandingImg = styled.img`
-  height: 85vh;
+  height: 90vh;
   max-width: 40vw;
   margin auto 2rem;
 `
@@ -65,8 +68,8 @@ export const LandingImg = styled.img`
 export const LandingText = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   color: ${({textLight}) => (textLight ? "#f9f9f9" : "#010606")};
 `
 
@@ -76,6 +79,7 @@ export const LandingTextHeader = styled.h2`
 `
 
 export const LandingTextP = styled.p`
+  font-family: 'Roboto', sans-serif;
 `
 
 export const CallToAction = styled.div`

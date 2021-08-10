@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export const Nav = styled.nav`
   background: #000;
-  height: 60px;
+  height: 10vh;
   display: flex;
   justify-content: center;
   font-size: 1rem;
@@ -17,7 +17,7 @@ export const Nav = styled.nav`
 export const NavContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  height: 60px;
+  height: 10vh;
   z-index: 1;
   width: 100%;
   padding: 0 24px;
@@ -53,14 +53,13 @@ export const NavMenu = styled.ul`
   align-items: center;
   list-style: none;
   text-align: center;
-  margin-right: 1rem;
   @media screen and (max-width: 768px) {
     display: none;
   }
 `
 
 export const NavItem = styled.li`
-  height: 60px;
+  height: 10vh;
 `
 
 export const NavLink = styled(Link)`
