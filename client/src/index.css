@@ -9,8 +9,8 @@
   background: transparent;
 }
 
-body{
-  background-color: rgb(49, 185, 158);
+html{
+  background: linear-gradient(120deg, #d930e2, #54468f);
 }
 
 .fadein {
@@ -43,4 +43,12 @@ body{
 @-ms-keyframes fadeIn {
   0% {opacity:0;}
   100% {opacity:1;}
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+  transition: background-color 5000s;
+  -webkit-text-fill-color: #666 !important;
 }

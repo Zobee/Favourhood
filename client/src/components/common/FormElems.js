@@ -11,22 +11,25 @@ export const FormContainer = styled.div`
     rgba(255, 255, 255, 0.8),
     rgba(255, 255, 255, 0.2)
   );
-  border: solid 1px black;
+  border: solid 0.01rem black;
   border-radius: 1.5rem;
-  box-shadow: 0.15rem 0.07rem #888;
 `
 
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
   width: 80%;
+  font-family: "Roboto", sans-serif;
 `
 
 export const FormHeader = styled.h1`
-  font-size: 4rem;
-  text-align: center;
-  margin: 2rem auto;
+  font-size: 3rem;
+  text-align: left;
+  margin: 2rem 0;
   letter-spacing: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+  padding-bottom: 0.5rem;
+  width: fit-content;
 `
 
 export const FormSection = styled.div`
@@ -36,6 +39,8 @@ export const FormSection = styled.div`
 `
 
 export const FormLabel = styled.label`
+  font-size: 1.1rem;
+  text-indent: 0.25rem;
 `
 
 export const FormInput = styled.input`
@@ -45,23 +50,29 @@ export const FormInput = styled.input`
   border-bottom: solid 0.05rem black;
   font-size: 1.5rem;
   margin-top: 0.5rem;
+  padding: 0.25rem;
+  color: #666;
+
+  &:active, &:focus{
+    background: none;
+  }
 `
 
 export const SubmitButton = styled.button`
-  height: 3rem;
+  height: 4rem;
   border: none;
+  border-radius: 2rem;
   outline: none;
-  background: linear-gradient(
-    to right bottom,
-    rgba(255, 255, 255, 0.8),
-    rgba(255, 255, 255, 0.2)
-  );
-  margin: 2rem;
+  font-family: 'Poppins', sans-serif;
+  background: black;
+  color: white;
+  margin: auto 4rem;
   font-size: 2rem;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.5s ease;
 
   &:hover, &:focus{
-    transform: translateY(-0.2rem);
+    background: #FFF;
+    color: #000;
   }
 `

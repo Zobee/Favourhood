@@ -5,7 +5,7 @@ import {FormContainer,
   FormSection,
   FormLabel,
   FormInput,
-  SubmitButton} from './SignupElems.js'
+  SubmitButton} from '../common/FormElems'
 
 const Signup = () => {
   return (
