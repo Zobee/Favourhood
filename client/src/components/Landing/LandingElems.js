@@ -56,7 +56,7 @@ export const HeroBtn = styled.button`
 export const LandingSection = styled.div`
   display: flex;
   padding: 2rem;
-  background-color: ${({bgDark}) => (bgDark ? "#000" : "#FFF")};
+  background-color: ${({bgDark}) => (bgDark ? "#434343" : "#FAFAFA")};
 `
 
 export const LandingImg = styled.img`

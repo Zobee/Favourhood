@@ -9,6 +9,10 @@
   background: transparent;
 }
 
+body{
+  background-color: rgb(49, 185, 158);
+}
+
 .fadein {
   animation: fadeIn 2.5s;
   -webkit-animation: fadeIn 2.5s;
