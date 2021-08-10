@@ -13,6 +13,11 @@ export const FormContainer = styled.div`
   );
   border: solid 0.01rem black;
   border-radius: 1.5rem;
+
+  @media screen and (max-width: 680px){
+    height: 80vh;
+    width: 80vw;
+  }
 `
 
 export const Form = styled.form`
@@ -24,12 +29,18 @@ export const Form = styled.form`
 
 export const FormHeader = styled.h1`
   font-size: 3rem;
-  text-align: left;
   margin: 2rem 0;
   letter-spacing: 0.5rem;
   font-family: 'Poppins', sans-serif;
   padding-bottom: 0.5rem;
   width: fit-content;
+  border-bottom: solid 0.2rem black;
+
+  @media screen and (max-width: 680px){
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+  }
 `
 
 export const FormSection = styled.div`
@@ -41,6 +52,10 @@ export const FormSection = styled.div`
 export const FormLabel = styled.label`
   font-size: 1.1rem;
   text-indent: 0.25rem;
+
+  @media screen and (max-width: 680px){
+    font-size: 1rem;
+  }
 `
 
 export const FormInput = styled.input`
@@ -55,6 +70,10 @@ export const FormInput = styled.input`
 
   &:active, &:focus{
     background: none;
+  }
+  
+  @media screen and (max-width: 680px){
+    font-size: 1.1rem;
   }
 `
 
@@ -74,5 +93,12 @@ export const SubmitButton = styled.button`
   &:hover, &:focus{
     background: #FFF;
     color: #000;
+  }
+
+  @media screen and (max-width: 680px){
+    font-size: 1rem;
+    width: 100%;
+    height: 2rem;
+    margin: 1rem 0;
   }
 `
