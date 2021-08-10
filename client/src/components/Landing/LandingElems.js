@@ -51,7 +51,31 @@ export const HeroBtn = styled.button`
 `
 
 export const LandingSection = styled.div`
-  height: 20vh;
+  display: flex;
+  padding: 2rem;
+  background-color: ${({bgDark}) => (bgDark ? "#010606" : "#f9f9f9")};
+`
+
+export const LandingImg = styled.img`
+  height: 85vh;
+  max-width: 40vw;
+  margin auto 2rem;
+`
+
+export const LandingText = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: ${({textLight}) => (textLight ? "#f9f9f9" : "#010606")};
+`
+
+export const LandingTextHeader = styled.h2`
+  font-size: 4rem;
+  text-align: center;
+`
+
+export const LandingTextP = styled.p`
 `
 
 export const CallToAction = styled.div`
