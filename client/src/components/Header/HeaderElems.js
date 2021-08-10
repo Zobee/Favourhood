@@ -73,6 +73,6 @@ export const NavLink = styled(Link)`
   cursor: pointer;
   transition: all 0.25s ease;
   &:hover, &:active {
-    background: #01bf71;
+    background: #E78816;
   }
 `
