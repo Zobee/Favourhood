@@ -1,31 +1,17 @@
-const router = require("express").Router();
+const express = require('express');
+const router = express.Router();
 
-const users = [
-  {
-    id: 1,
-    name: "Tad",
-    favoursAsked: [],
-    favoursTakenOn: [],
-    totalFavoursComplete: 5
-  },
-  {
-    id: 2,
-    name: "Chad",
-    favoursAsked: [],
-    favoursTakenOn: [],
-    totalFavoursComplete: 2
-  },
-  {
-    id: 3,
-    name: "Fad",
-    favoursAsked: [],
-    favoursTakenOn: [],
-    totalFavoursComplete: 25
-  }
-]
-
-router.get("/", (req, res) => {
-  res.json(users)
-})
-
-module.exports = router;
+module.exports = (db) => {
+  router.get("/", (req, res) => {
+    db.query(`SELECT * FROM users;`)
+      .then(data => {
+        res.json(data.rows);
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+  });
+  return router;
+};
