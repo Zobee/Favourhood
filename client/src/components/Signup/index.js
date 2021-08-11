@@ -1,4 +1,5 @@
 import { useState } from "react"
+import axios from 'axios'
 import {FormContainer,
   Form,
   FormHeader,
@@ -14,8 +15,16 @@ const Signup = () => {
   const [password, setPassword] = useState("")
   const [confirmPw, setConfirmPw] = useState("")
 
-  const handleSignup = (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault()
+
+    axios.post("http://localhost:3003/api/users/signup", {
+      name,
+      email,
+      password
+    })
+    .then(() => console.log("success!"))
+    .catch(err => console.log(err.response.data))
   }
 
   return (
