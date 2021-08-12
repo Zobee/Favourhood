@@ -1,18 +1,16 @@
 const jwt = require("jsonwebtoken");
 
 const validateToken = (req, res, next) => {
-  const authHeader = req.header("auth-token");
-  const token = authHeader;
+  const token = req.header("auth-token");
   if (!token) return res.status(401).json("No token provided");
 
-  jwt.verify(token, process.env.SECRET_TOKEN, (err, decoded) => {
-    if (err) {
-      res.status(401).json("Unauthorized access");
-    }
-
-    req.userId = decoded._id;
-    next();
-  });
+  try{
+    const decoded = jwt.verify(token, process.env.SECRET_TOKEN)
+    req.user = decoded
+    next()
+  } catch(err) {
+    res.status(400).send("Invalid token")
+}
 };
 
 module.exports = validateToken;
