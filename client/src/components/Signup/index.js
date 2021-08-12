@@ -23,7 +23,7 @@ const Signup = () => {
       email,
       password
     })
-    .then(() => console.log("success!"))
+    .then(res => console.log(res.data))
     .catch(err => console.log(err.response.data))
   }
 

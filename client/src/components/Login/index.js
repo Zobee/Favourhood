@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import axios from 'axios'
 import {FormContainer,
   Form,
   FormHeader,
@@ -14,6 +15,13 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
+
+    axios.post("http://localhost:3003/api/users/login", {
+      email,
+      password
+    }, {withCredentials: true})
+    .then(res => console.log(res.data))
+    .catch(err => console.log(err.response.data))
   }
 
   return (
