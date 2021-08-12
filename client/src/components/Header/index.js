@@ -10,7 +10,9 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
   const {token, setToken} = useToken()
 
-  /* TODO: Create a logout function that clears the cookie */
+  /* TODO: 
+    * Create a logout function that clears the cookie 
+  */
 
   return (
     <>
@@ -37,9 +39,14 @@ const Header = () => {
             </NavItem>
           </>
             :
+            <>
+            <NavItem>
+              <NavLink to='user'>User</NavLink>
+            </NavItem>
             <NavItem>
               <NavLink onClick={() => setToken("")} to='#'>Logout</NavLink>
             </NavItem>
+            </>
           }
         </NavMenu>
       </NavContainer>

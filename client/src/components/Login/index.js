@@ -7,13 +7,15 @@ import {FormContainer,
   FormLabel,
   FormInput,
   SubmitButton} from '../common/FormElems'
-import {useHistory} from 'react-router-dom'
+import {useHistory, Redirect} from 'react-router-dom'
+import { useToken } from '../../context/AccessTokenProvider'
 
 const Login = () => {
   const [error, setError] = useState([])
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const history = useHistory()
+  const {token, setToken} = useToken()
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -22,14 +24,14 @@ const Login = () => {
         email,
         password
       }, {withCredentials: true})
-      console.log(res.data)
-      //history.push('/')
+      setToken(res.data)
+      history.push('/favours')
     } catch (err) {
       console.log(err.response.data)
     }
   }
 
-  return (
+  return ( token ? <Redirect to="/"/> :
     <FormContainer>
       <Form>
         <FormHeader>Log In</FormHeader>
