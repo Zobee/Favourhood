@@ -1,5 +1,7 @@
 const router = require("express").Router();
 const bcrypt = require('bcrypt');
+const verify = require('jsonwebtoken').verify;
+require("dotenv").config()
 const {generateJWT, generateRefreshToken} = require('../utils/generateJWT');
 
 const SALTROUNDS = 10;
@@ -66,6 +68,28 @@ module.exports = (db) => {
     const refreshToken = generateRefreshToken(user.id);
 
     res.cookie("jid", refreshToken, {httpOnly: true})
+    res.json(accessToken)
+  })
+
+  router.post("/refresh_token", async (req, res) => {
+    const refreshToken = req.cookies.jid
+    if (!refreshToken) return res.status(400).json("Error: No Refresh Token")
+
+    let payload;
+    try {
+      payload = verify(refreshToken, process.env.REFRESH_TOKEN);
+    } catch (err) {
+      console.log(err)
+      return res.status(400).json("Error: Invalid Refresh Token")
+    }
+
+    const user = await db.query(`SELECT * FROM users WHERE id = $1`,[payload._id])
+    if(!user) return res.status(400).json("Error: User Not Found")
+
+    const accessToken = generateJWT(user.id);
+    const newRefreshToken = generateRefreshToken(user.id);
+
+    res.cookie("jid", newRefreshToken, {httpOnly: true})
     res.json(accessToken)
   })
   return router;

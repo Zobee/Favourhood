@@ -7,21 +7,26 @@ import {FormContainer,
   FormLabel,
   FormInput,
   SubmitButton} from '../common/FormElems'
+import {useHistory} from 'react-router-dom'
 
 const Login = () => {
   const [error, setError] = useState([])
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const history = useHistory()
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-
-    axios.post("http://localhost:3003/api/users/login", {
-      email,
-      password
-    }, {withCredentials: true})
-    .then(res => console.log(res.data))
-    .catch(err => console.log(err.response.data))
+    try {
+      const res = await axios.post("http://localhost:3003/api/users/login", {
+        email,
+        password
+      }, {withCredentials: true})
+      console.log(res.data)
+      //history.push('/')
+    } catch (err) {
+      console.log(err.response.data)
+    }
   }
 
   return (

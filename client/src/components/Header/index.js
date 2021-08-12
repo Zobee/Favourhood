@@ -1,12 +1,17 @@
 import { Nav, NavContainer, NavLogo, MobileIcon, NavMenu, NavItem, NavLink } from "./HeaderElems"
 import { useState } from "react"
 import { FaBars } from "react-icons/fa"
+import { useToken } from '../../context/AccessTokenProvider'
+
 
 import Sidebar from '../Sidebar'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const {token, setToken} = useToken()
+
+  /* TODO: Create a logout function that clears the cookie */
+
   return (
     <>
     <Nav>
@@ -22,7 +27,7 @@ const Header = () => {
           <NavItem>
             <NavLink to='/favours'>Favours</NavLink>
           </NavItem>
-          {!isLoggedIn ?
+          {!token ?
           <>
             <NavItem>
               <NavLink to='signup'>Sign Up</NavLink>
@@ -33,7 +38,7 @@ const Header = () => {
           </>
             :
             <NavItem>
-              <NavLink to='#'>Logout</NavLink>
+              <NavLink onClick={() => setToken("")} to='#'>Logout</NavLink>
             </NavItem>
           }
         </NavMenu>

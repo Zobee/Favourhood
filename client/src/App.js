@@ -7,7 +7,14 @@ import Signup from './components/Signup';
 import NotFound from './components/NotFound';
 import Footer from './components/Footer';
 
+import { useRefresh } from "./components/hooks/useRefresh";
+import { useToken } from "./context/AccessTokenProvider";
+
 const App = () => {
+  const loading = useRefresh()
+  console.log(loading)
+  const {token} = useToken()
+  console.log(token)
   return (
     <div>
       <Router>

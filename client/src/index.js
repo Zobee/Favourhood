@@ -2,10 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { TokenProvider } from './context/AccessTokenProvider'
 
 ReactDOM.render(
-  <React.StrictMode>
+  <TokenProvider>
     <App />
-  </React.StrictMode>,
+  </TokenProvider>,
   document.getElementById('root')
 );
