@@ -97,7 +97,8 @@ module.exports = (db) => {
   })
 
   router.get("/userData", validateToken, async (req, res) => {
-    res.json("SECRET DATA, SHHHHH")
+    const userData = await db.query(`SELECT name, email FROM users WHERE id = $1`,[req.userId]);
+    res.json(userData.rows[0])
   })
   return router;
 };

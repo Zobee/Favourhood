@@ -17,7 +17,7 @@ const User = () => {
   },[])
   return (
     <div>
-      {data ? <h1>{data}</h1> : <h1>Access Denied</h1>}
+      {data ? <h1>Hello {data.name} | {data.email}</h1> : <h1>Access Denied</h1>}
     </div>
   )
 }
