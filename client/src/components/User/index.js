@@ -7,7 +7,7 @@ const User = () => {
   const [data, setData] = useState(null)
   useEffect(() => {
     console.log("TOKEN", token)
-    axios.get("http://localhost:3003/api/users/userData", {
+    axios.get("/api/users/userData", {
       headers : {
         'auth-token': token
       }

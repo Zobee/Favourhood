@@ -18,7 +18,7 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault()
 
-    axios.post("http://localhost:3003/api/users/signup", {
+    axios.post("/api/users/signup", {
       name,
       email,
       password
