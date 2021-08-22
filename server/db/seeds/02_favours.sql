@@ -1,0 +1,3 @@
+INSERT INTO favours (ownerId acceptorId title description status ) VALUES (1, null, 'Help Me!', 'Please', 'Not Started')
+INSERT INTO favours (ownerId acceptorId title description status ) VALUES (3, 4, 'Bring Me Sugar!', 'I want to bake a cake', 'In Progress')
+INSERT INTO favours (ownerId acceptorId title description status reward ) VALUES (5, 2, 'I want it all!', 'And I want it now', 'Complete', "queen")

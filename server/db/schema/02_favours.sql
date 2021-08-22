@@ -1,0 +1,11 @@
+DROP TABLE IF EXISTS favours CASCADE;
+
+CREATE TABLE favours (
+  id SERIAL PRIMARY KEY NOT NULL,
+  ownerId INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  acceptorId INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  title TEXT NOT NULL,
+  description TEXT NOT NULL,
+  status TEXT NOT NULL,
+  reward TEXT
+);

@@ -1,0 +1,1 @@
+INSERT INTO messages (senderId receiverId text) (5, 2, "Thank you!")
