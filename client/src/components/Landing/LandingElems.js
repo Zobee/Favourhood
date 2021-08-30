@@ -6,16 +6,12 @@ export const LandingContainer = styled.div`
 
 export const HeroBanner = styled.div`
   height: 50vh;
-  background: url('img/hero.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: rgba(0,0,0,0.3);
-  background-blend-mode: multiply;
   display: flex;
+  background-color: #333FAF;
   justify-content: center;
   align-items: center;
   font-family: 'Roboto', sans-serif;
+  position: relative;
 `
 
 export const HeroContentContainer = styled.div`
@@ -30,7 +26,7 @@ export const HeroH1 = styled.h1`
 `
 
 export const HeroSpan = styled.span`
-  font-size: 6.1rem;
+  font-size: 6rem;
   color: #E78816;
   transition: all 0.25s ease;
 `
@@ -39,8 +35,9 @@ export const HeroBtn = styled.button`
   border: none;
   outline: none;
   margin-top: 1rem;
-  height: 2rem;
-  width: 100%;
+  height: 3rem;
+  font-size: 1.5rem;
+  width: 80%;
   background-color: #F9A826;
   color: #FFF;
   cursor: pointer;
@@ -57,6 +54,7 @@ export const LandingSection = styled.div`
   display: flex;
   padding: 2rem;
   background-color: ${({bgDark}) => (bgDark ? "#434343" : "#FAFAFA")};
+  position: relative;
 `
 
 export const LandingImg = styled.img`
@@ -76,6 +74,7 @@ export const LandingText = styled.div`
 export const LandingTextHeader = styled.h2`
   font-size: 4rem;
   text-align: center;
+  margin-bottom: 2rem;
 `
 
 export const LandingTextP = styled.p`

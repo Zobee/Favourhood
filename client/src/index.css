@@ -10,7 +10,6 @@
 }
 
 html{
-  background: linear-gradient(120deg, #d930e2, #54468f);
   background: linear-gradient(120deg, #287799, #333FAF);
 }
 
@@ -53,4 +52,3 @@ input:-webkit-autofill:active  {
   transition: background-color 5000s;
   -webkit-text-fill-color: #666 !important;
 }
-

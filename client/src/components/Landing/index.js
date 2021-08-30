@@ -11,8 +11,8 @@ import {
   LandingTextHeader,
   LandingTextP,
   CallToAction}
-from './LandingElems'
-
+  from './LandingElems'
+import Divider from './Divider'
 import { useState, useEffect } from 'react'
 
 const placeholder = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -59,6 +59,7 @@ const Landing = () => {
         </HeroContentContainer>
       </HeroBanner>
       <LandingSection>
+      <Divider color={"#333FAF"}/>
         <LandingImg src={'img/landing1.svg'}/>
         <LandingText>
           <LandingTextHeader>Help Others</LandingTextHeader>
@@ -66,6 +67,7 @@ const Landing = () => {
         </LandingText>
       </LandingSection>
       <LandingSection bgDark={true}>
+      <Divider color={"#FAFAFA"}/>
         <LandingText textLight={true}>
           <LandingTextHeader>Build A Community</LandingTextHeader>
           <LandingTextP>{placeholder}</LandingTextP>
@@ -73,6 +75,7 @@ const Landing = () => {
         <LandingImg src={'img/landing2.svg'}/>
       </LandingSection>
       <LandingSection>
+        <Divider color={"#434343"}/>
         <LandingImg src={'img/landing3.svg'}/>
         <LandingText>
           <LandingTextHeader>Join The Favourhood</LandingTextHeader>
